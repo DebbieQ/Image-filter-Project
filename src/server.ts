@@ -29,7 +29,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-    app.get('/filteredimage', async (req: Request, res: Response) => {
+
+  app.get('/filteredimage', async (req: Request, res: Response) => {
     const image_url = req.query.image_url.toString();
     if (!image_url) {
       res.status(400).send('Image url is missing');
@@ -43,15 +44,15 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     
   });
+
   //! END @TODO1
- 
- 
+  
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
-   
+  
 
   // Start the Server
   app.listen( port, () => {
